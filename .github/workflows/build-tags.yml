@@ -1,4 +1,4 @@
-name: ESP-IDF Tags CI
+name: Build ESP-IDF Tags
 
 on:
   push:
