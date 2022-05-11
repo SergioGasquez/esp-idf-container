@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         board: [esp32, esp32c3, esp32s2, esp32s3, all]
-        idf-version: [v4.4, v4.3.2, master]
+        idf-version: [v4.4, master]
     steps:
       -
         name: Checkout
