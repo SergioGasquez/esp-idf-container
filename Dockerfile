@@ -22,5 +22,5 @@ RUN mkdir -p .espressif/frameworks/ \
     && python3 .espressif/frameworks/esp-idf/tools/idf_tools.py install cmake \
     && .espressif/frameworks/esp-idf/install.sh ${ESP_BOARD}
 ENV IDF_TOOLS_PATH=/home/${CONTAINER_USER}/.espressif
-RUN echo "source /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf-${ESP_IDF_VERSION}/export.sh > /dev/null 2>&1" >> ~/.bashrc
+RUN echo "source /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf/export.sh > /dev/null 2>&1" >> ~/.bashrc
 CMD "/bin/bash"
