@@ -18,9 +18,9 @@ WORKDIR /home/${CONTAINER_USER}
 RUN mkdir -p .espressif/frameworks/ \
     && git clone --branch ${ESP_IDF_VERSION} -q --depth 1 --shallow-submodules \
     --recursive https://github.com/espressif/esp-idf.git \
-    .espressif/frameworks/esp-idf-${ESP_IDF_VERSION} \
-    && python3 .espressif/frameworks/esp-idf-${ESP_IDF_VERSION}/tools/idf_tools.py install cmake \
-    && .espressif/frameworks/esp-idf-${ESP_IDF_VERSION}/install.sh ${ESP_BOARD}
+    .espressif/frameworks/esp-idf \
+    && python3 .espressif/frameworks/esp-idf/tools/idf_tools.py install cmake \
+    && .espressif/frameworks/esp-idf/install.sh ${ESP_BOARD}
 ENV IDF_TOOLS_PATH=/home/${CONTAINER_USER}/.espressif
 RUN echo "source /home/${CONTAINER_USER}/.espressif/frameworks/esp-idf-${ESP_IDF_VERSION}/export.sh > /dev/null 2>&1" >> ~/.bashrc
 CMD "/bin/bash"
